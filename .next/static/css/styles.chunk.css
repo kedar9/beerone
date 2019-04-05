@@ -1,0 +1,46 @@
+@font-face {
+  font-family: Staatliches;
+  src: url("/static/Staatliches-Regular.ttf"); }
+
+@font-face {
+  font-family: NationalPark;
+  src: url("/static/NationalPark-Thin.otf"); }
+
+body {
+  margin: 0px;
+  color: #fff;
+  font-size: 15px;
+  background-color: #111;
+  background-image: url("/static/beer.webp");
+  background-size: 100vh;
+  background-position: 600px 90px;
+  background-repeat: no-repeat;
+  transition: background-position 300ms ease-in-out; }
+  @media only screen and (min-width: 1200px) {
+    body {
+      background-position: -25% 90px; } }
+
+.title, .beerone-content .beer-title {
+  font-family: Staatliches, sans-serif;
+  color: #f5e430; }
+
+.heading {
+  font-size: 2.5rem; }
+
+.beerone-container {
+  margin: 10px; }
+
+@media only screen and (min-width: 1200px) {
+  .beerone-content {
+    width: 65%;
+    margin-left: 35%; } }
+
+.beerone-content .beer-title {
+  width: 100%;
+  font-size: 5rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 3px; }
+
+
+/*# sourceMappingURL=styles.chunk.css.map*/
