@@ -1,5 +1,44 @@
 ((window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/index.js"],{
 
+/***/ "./components/button.jsx":
+/*!*******************************!*\
+  !*** ./components/button.jsx ***!
+  \*******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _static_styles_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../static/styles.scss */ "./static/styles.scss");
+/* harmony import */ var _static_styles_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_static_styles_scss__WEBPACK_IMPORTED_MODULE_1__);
+var _jsxFileName = "/Users/kedar.gadge/GIT/beerone/components/button.jsx";
+
+
+
+var Button = function Button(props) {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "beer-button",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 5
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "beer-info-title",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 6
+    },
+    __self: this
+  }, props.text));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Button);
+
+/***/ }),
+
 /***/ "./components/info.jsx":
 /*!*****************************!*\
   !*** ./components/info.jsx ***!
@@ -13,45 +52,69 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _static_styles_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../static/styles.scss */ "./static/styles.scss");
 /* harmony import */ var _static_styles_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_static_styles_scss__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./button */ "./components/button.jsx");
 var _jsxFileName = "/Users/kedar.gadge/GIT/beerone/components/info.jsx";
 
 
 
+
 var Info = function Info(props) {
-  // const { type } = props;
-  console.log('Data: ', props);
+  var type = props.type,
+      title = props.title,
+      value = props.value,
+      display = props.display,
+      _props$displayClass = props.displayClass,
+      displayClass = _props$displayClass === void 0 ? '' : _props$displayClass,
+      similarLinkMsg = props.similarLinkMsg,
+      _props$className = props.className,
+      className = _props$className === void 0 ? '' : _props$className;
+  var styleObj = type === 'srmId' && display ? {
+    backgroundColor: "#".concat(display)
+  } : {};
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "beerone-container",
+    className: "beer-info-container ".concat(className),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 7
+      lineNumber: 20
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "title heading",
+    className: "beer-info-title",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8
+      lineNumber: 21
     },
     __self: this
-  }, "BEERONE"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "beerone-content",
+  }, title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "beer-info-display ".concat(displayClass),
+    style: styleObj,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9
+      lineNumber: 22
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "beer-title",
+  }, display), similarLinkMsg && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_button__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    text: similarLinkMsg,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10
+      lineNumber: 25
     },
     __self: this
-  }, "Hello World")));
+  }));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Info);
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/object/assign.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/core-js/object/assign.js ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! core-js/library/fn/object/assign */ "./node_modules/@babel/runtime-corejs2/node_modules/core-js/library/fn/object/assign.js");
 
 /***/ }),
 
@@ -129,6 +192,39 @@ function _defineProperty(obj, key, value) {
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/extends.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/extends.js ***!
+  \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _extends; });
+/* harmony import */ var _core_js_object_assign__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../core-js/object/assign */ "./node_modules/@babel/runtime-corejs2/core-js/object/assign.js");
+/* harmony import */ var _core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0__);
+
+function _extends() {
+  _extends = _core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default.a || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return _extends.apply(this, arguments);
+}
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js":
 /*!*************************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js ***!
@@ -169,6 +265,19 @@ function _objectSpread(target) {
 
   return target;
 }
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/node_modules/core-js/library/fn/object/assign.js":
+/*!**********************************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/node_modules/core-js/library/fn/object/assign.js ***!
+  \**********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(/*! ../../modules/es6.object.assign */ "./node_modules/@babel/runtime-corejs2/node_modules/core-js/library/modules/es6.object.assign.js");
+module.exports = __webpack_require__(/*! ../../modules/_core */ "./node_modules/@babel/runtime-corejs2/node_modules/core-js/library/modules/_core.js").Object.assign;
+
 
 /***/ }),
 
@@ -737,6 +846,52 @@ var meta = module.exports = {
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime-corejs2/node_modules/core-js/library/modules/_object-assign.js":
+/*!****************************************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/node_modules/core-js/library/modules/_object-assign.js ***!
+  \****************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+// 19.1.2.1 Object.assign(target, source, ...)
+var getKeys = __webpack_require__(/*! ./_object-keys */ "./node_modules/@babel/runtime-corejs2/node_modules/core-js/library/modules/_object-keys.js");
+var gOPS = __webpack_require__(/*! ./_object-gops */ "./node_modules/@babel/runtime-corejs2/node_modules/core-js/library/modules/_object-gops.js");
+var pIE = __webpack_require__(/*! ./_object-pie */ "./node_modules/@babel/runtime-corejs2/node_modules/core-js/library/modules/_object-pie.js");
+var toObject = __webpack_require__(/*! ./_to-object */ "./node_modules/@babel/runtime-corejs2/node_modules/core-js/library/modules/_to-object.js");
+var IObject = __webpack_require__(/*! ./_iobject */ "./node_modules/@babel/runtime-corejs2/node_modules/core-js/library/modules/_iobject.js");
+var $assign = Object.assign;
+
+// should work with symbols and should have deterministic property order (V8 bug)
+module.exports = !$assign || __webpack_require__(/*! ./_fails */ "./node_modules/@babel/runtime-corejs2/node_modules/core-js/library/modules/_fails.js")(function () {
+  var A = {};
+  var B = {};
+  // eslint-disable-next-line no-undef
+  var S = Symbol();
+  var K = 'abcdefghijklmnopqrst';
+  A[S] = 7;
+  K.split('').forEach(function (k) { B[k] = k; });
+  return $assign({}, A)[S] != 7 || Object.keys($assign({}, B)).join('') != K;
+}) ? function assign(target, source) { // eslint-disable-line no-unused-vars
+  var T = toObject(target);
+  var aLen = arguments.length;
+  var index = 1;
+  var getSymbols = gOPS.f;
+  var isEnum = pIE.f;
+  while (aLen > index) {
+    var S = IObject(arguments[index++]);
+    var keys = getSymbols ? getKeys(S).concat(getSymbols(S)) : getKeys(S);
+    var length = keys.length;
+    var j = 0;
+    var key;
+    while (length > j) if (isEnum.call(S, key = keys[j++])) T[key] = S[key];
+  } return T;
+} : $assign;
+
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime-corejs2/node_modules/core-js/library/modules/_object-create.js":
 /*!****************************************************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs2/node_modules/core-js/library/modules/_object-create.js ***!
@@ -1272,6 +1427,21 @@ $exports.store = store;
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime-corejs2/node_modules/core-js/library/modules/es6.object.assign.js":
+/*!*******************************************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/node_modules/core-js/library/modules/es6.object.assign.js ***!
+  \*******************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// 19.1.3.1 Object.assign(target, source)
+var $export = __webpack_require__(/*! ./_export */ "./node_modules/@babel/runtime-corejs2/node_modules/core-js/library/modules/_export.js");
+
+$export($export.S + $export.F, 'Object', { assign: __webpack_require__(/*! ./_object-assign */ "./node_modules/@babel/runtime-corejs2/node_modules/core-js/library/modules/_object-assign.js") });
+
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime-corejs2/node_modules/core-js/library/modules/es6.object.define-property.js":
 /*!****************************************************************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs2/node_modules/core-js/library/modules/es6.object.define-property.js ***!
@@ -1642,15 +1812,21 @@ module.exports = (__webpack_require__(/*! dll-reference dll_7aff549c98b978433226
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/objectSpread */ "./node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! isomorphic-unfetch */ "./node_modules/isomorphic-unfetch/browser.js");
-/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _static_styles_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../static/styles.scss */ "./static/styles.scss");
-/* harmony import */ var _static_styles_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_static_styles_scss__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _components_info__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/info */ "./components/info.jsx");
-/* harmony import */ var _static_mock_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../static/mock.js */ "./static/mock.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/extends */ "./node_modules/@babel/runtime-corejs2/helpers/esm/extends.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/keys */ "./node_modules/@babel/runtime-corejs2/core-js/object/keys.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/objectSpread */ "./node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! isomorphic-unfetch */ "./node_modules/isomorphic-unfetch/browser.js");
+/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _static_styles_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../static/styles.scss */ "./static/styles.scss");
+/* harmony import */ var _static_styles_scss__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_static_styles_scss__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _components_info__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/info */ "./components/info.jsx");
+/* harmony import */ var _components_button__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/button */ "./components/button.jsx");
+/* harmony import */ var _static_mock_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../static/mock.js */ "./static/mock.js");
+
+
 
 var _jsxFileName = "/Users/kedar.gadge/GIT/beerone/pages/index.jsx";
 
@@ -1659,45 +1835,146 @@ var _jsxFileName = "/Users/kedar.gadge/GIT/beerone/pages/index.jsx";
 
 
 
-var Index = function Index(props) {
-  var currentBeer = Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, _static_mock_js__WEBPACK_IMPORTED_MODULE_5__["BUDWEISER"]);
 
-  console.log('Data: ', props, _static_mock_js__WEBPACK_IMPORTED_MODULE_5__["BUDWEISER"]);
-  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+var getBeerInfo = function getBeerInfo(currentBeer) {
+  var styleId = currentBeer.styleId,
+      style = currentBeer.style,
+      abv = currentBeer.abv,
+      srmId = currentBeer.srmId,
+      srm = currentBeer.srm,
+      ibu = currentBeer.ibu,
+      description = currentBeer.description;
+  return {
+    abv: {
+      title: 'Alcohol By Volume',
+      value: abv,
+      display: "".concat(abv || '--', "%"),
+      displayClass: 'highlight',
+      similarLinkMsg: "".concat(abv ? 'Beers with Similar ABV' : '')
+    },
+    srmId: {
+      title: 'Beer Color',
+      value: srmId,
+      display: srm && srm.hex,
+      displayClass: 'color',
+      similarLinkMsg: "".concat(srmId ? 'Beers of This Color' : '')
+    },
+    ibu: {
+      title: 'Bitterness (In IBU)',
+      value: ibu,
+      display: ibu || '--',
+      displayClass: 'highlight',
+      similarLinkMsg: "".concat(ibu ? 'Beers with Similar Bitterness' : '')
+    }
+  };
+};
+
+var Index = function Index(props) {
+  var currentBeer = Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_2__["default"])({}, _static_mock_js__WEBPACK_IMPORTED_MODULE_8__["BUDWEISER"]);
+
+  var nameDisplay = currentBeer.nameDisplay,
+      description = currentBeer.description,
+      styleId = currentBeer.styleId,
+      style = currentBeer.style;
+  var beerInfo = getBeerInfo(currentBeer);
+  console.log('Data: ', props, _static_mock_js__WEBPACK_IMPORTED_MODULE_8__["BUDWEISER"]);
+  return react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
     className: "beerone-container",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10
+      lineNumber: 44
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-    className: "title heading",
+  }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
+    className: "beerone-glass",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11
+      lineNumber: 45
     },
     __self: this
-  }, "BEERONE"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+  }), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
     className: "beerone-content",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 46
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+  }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
     className: "beer-title",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13
+      lineNumber: 47
     },
     __self: this
-  }, currentBeer.nameDisplay), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_info__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, nameDisplay), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
+    className: "beer-title-sly",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16
+      lineNumber: 48
     },
     __self: this
-  })));
+  }, nameDisplay), description && react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
+    className: "beer-desc",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 50
+    },
+    __self: this
+  }, description), styleId && style && react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
+    className: "beer-style",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 53
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_components_info__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    title: "Style",
+    display: style.name,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 54
+    },
+    __self: this
+  }), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
+    className: "beer-style-btns",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 55
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_components_button__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    text: "About this Style",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 56
+    },
+    __self: this
+  }), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_components_button__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    text: "Beers of this Style",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 57
+    },
+    __self: this
+  }))), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
+    className: "beer-info",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 61
+    },
+    __self: this
+  }, _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_1___default()(beerInfo).map(function (key, index) {
+    var infoObj = beerInfo[key];
+    return react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_components_info__WEBPACK_IMPORTED_MODULE_6__["default"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
+      type: key
+    }, infoObj, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 66
+      },
+      __self: this
+    }));
+  }))));
 }; // Index.getInitialProps = async function() {
 //   const res = await fetch('https://api.brewerydb.com/v2/search?type=beer&key=ea2b62597b2a7489427894a88c9fca06&q=bud');
 //   const data = await res.json();
