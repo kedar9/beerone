@@ -1,6 +1,6 @@
-import '../static/styles.scss';
-import Button from './button';
-
+import './styles.scss';
+import Button from './../button';
+import Search from './../search';
 
 const Info = (props) => {
   const {
@@ -10,9 +10,10 @@ const Info = (props) => {
     display,
     displayClass = '',
     similarLinkMsg,
-    className = ''
+    className = '',
+    searchUrl = ''
   } = props;
-  const styleObj = (type === 'srmId' && display) ? {
+  const styleObj = (type === 'srmId' && display !== '--') ? {
     backgroundColor: `#${display}`
   } : {};
 
@@ -22,7 +23,13 @@ const Info = (props) => {
       <div className={`beer-info-display ${displayClass}`} style={styleObj}>
         {display}
       </div>
-      {similarLinkMsg && <Button text={similarLinkMsg} />}
+      {similarLinkMsg &&
+        <Button
+          text={similarLinkMsg}
+          icon="more"
+          onClick={() => props.openSidebar(searchUrl)}
+        />
+      }
     </div>
   );
 };

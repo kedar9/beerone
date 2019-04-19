@@ -1,0 +1,34 @@
+.beer-button {
+  font-family: Staatliches, sans-serif;
+  color: #eabb00;
+  width: 15rem;
+  margin: 1rem auto;
+  background-color: #000;
+  border: 0.5px solid #eabb00;
+  border-radius: 0.2rem;
+  display: flex;
+  cursor: pointer;
+
+  .icon {
+    padding: 0.5rem 0.25rem;
+    background-color: #eabb00;
+    border-top-left-radius: 0.1rem;
+    border-bottom-left-radius: 0.1rem;
+    stroke: #181818;
+  }
+
+  &-title {
+    padding: 0.5rem 0.5rem 0.4rem;
+    color: #fff;
+    font-size: 1.2rem;
+    text-align: left;
+  }
+
+  &:hover {
+    background-color: #eabb00;
+
+    .beer-button-title {
+      color: #181818;
+    }
+  }
+}

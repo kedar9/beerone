@@ -1,0 +1,64 @@
+const express = require('express');
+const next = require('next');
+const fetch = require('isomorphic-unfetch');
+
+const dev = process.env.NODE_ENV !== 'production';
+const app = next({ dev });
+const handle = app.getRequestHandler();
+
+const baseUrl = 'https://api.brewerydb.com/v2';
+const apiKey = 'key=ea2b62597b2a7489427894a88c9fca06';
+const sortBy = 'order=updateDate&sort=DESC';
+
+const mockData = require('./static/mock.js');
+// const data = require('./data.js');
+
+app
+  .prepare()
+  .then(() => {
+    const server = express();
+    server.use(express.json());
+
+    server.get('/search', async (req, res) => {
+      const { q } = req.query;
+      if (q) {
+        try {
+          const response = await fetch(`https://jsonplaceholder.typicode.com/todos/1`);
+          const responseObj = await response.json();
+          res.send(mockData.SEARCH_RESULTS);
+        } catch (e) {
+          res.status(500).send('500: Internal Server Error');
+        }
+      }
+      res.send(mockData.SEARCH_RESULTS);
+      // res.status(404).send('404: Page not Found');
+    })
+
+    server.get('/more/:key/:values', async (req, res) => {
+      const { key, values } = req.params;
+      if (key && values) {
+        try {
+          console.log('\n\n calling: ', `${baseUrl}/beers/?${key}=${values}&${apiKey}&${sortBy}`);
+          const response = await fetch(`${baseUrl}/beers/?${key}=${values}&${apiKey}&${sortBy}`);
+          const responseObj = await response.json();
+          res.send(responseObj);
+        } catch (e) {
+          res.status(500).send('500: Internal Server Error');
+        }
+      }
+      res.status(404).send('404: Page not Found');
+    })
+
+    server.get('*', (req, res) => {
+      return handle(req, res);
+    })
+
+    server.listen(3000, err => {
+      if (err) throw err;
+      console.log('> Ready on http://localhost:3000');
+    })
+  })
+  .catch(ex => {
+    console.error(ex.stack);
+    process.exit(1);
+  })
