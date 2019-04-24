@@ -9,6 +9,7 @@
     "next": "^8.0.3",
     "node-sass": "^4.11.0",
     "react": "^16.8.6",
+    "react-device-detect": "^1.6.2",
     "react-dom": "^16.8.6",
     "react-responsive-modal": "^3.6.0"
   },

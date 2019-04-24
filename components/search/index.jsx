@@ -13,7 +13,7 @@ const Search = (props) => {
   const [inputValue, setInputValue] = useState('');
   const [allowRequest, setAllowRequest] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
-  const { searchUrl } = props;
+  const { searchUrl, searchHeadline } = props;
 
   const search = async (url) => {
     setIsLoading(true);
@@ -51,7 +51,10 @@ const Search = (props) => {
 
   return (
     <div className="beerone-search">
-      {!searchUrl && <div className="beerone-search-form">
+      {searchHeadline &&
+        <div className="beerone-search-headline">{searchHeadline}</div>
+      }
+      {(!searchUrl && !searchHeadline) && <div className="beerone-search-form">
         Search for a beer:
         <input
           id="search-input"
@@ -61,7 +64,7 @@ const Search = (props) => {
       </div>}
       <ul className="beerone-search-list">
         {beerList.map(beer => (
-          <li className="beerone-search-result" onClick={() => props.onResultSelect(beer)}>
+          <li className="beerone-search-result" onClick={() => props.selectBeer(beer)}>
             {beer.nameDisplay || beer.name}
           </li>
         ))}

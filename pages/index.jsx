@@ -2,50 +2,15 @@ import { useState } from 'react';
 import fetch from 'isomorphic-unfetch';
 import Modal from 'react-responsive-modal';
 
-import '../static/styles.scss';
+import './styles.scss';
+import Beer from '../components/beer';
+import Highlight from '../components/highlight';
 import Info from '../components/info';
 import Button from '../components/button';
 import Search from '../components/search';
 import SearchIcon from '../components/search-icon';
+import { HIGHLIGHTS } from '../static/data.js';
 import { BUDWEISER } from '../static/mock.js';
-
-const getBeerInfo = (currentBeer) => {
-  const {
-    styleId, style, abv, srmId, srm, ibu, description
-  } = currentBeer;
-
-  // 'parseInt' is required in the following assignments because
-  // the numbers are getting converted to string. So `5+1` becomes 51.
-  const abvLimits = !isNaN(abv) ? [abv-1, parseInt(abv)+1] : null;
-  const ibuLimits = !isNaN(ibu) ? [ibu-5, parseInt(ibu)+5] : null;
-
-  return {
-    abv: {
-      title: 'Alcohol By Volume',
-      value: abv,
-      display: `${abv || '--'}%`,
-      displayClass: 'highlight',
-      similarLinkMsg: `${abv ? 'Beers with Similar ABV' : ''}`,
-      searchUrl: `${abvLimits ? `/more/abv/${abvLimits[0]},${abvLimits[1]}` : ''}`
-    },
-    srmId: {
-      title: 'Beer Color',
-      value: srmId,
-      display: (srm && srm.hex) || '--',
-      displayClass: `${(srm && srm.hex) ? 'color' : 'highlight'}`,
-      similarLinkMsg: `${srmId ? 'Beers of This Color' : ''}`,
-      searchUrl: `${srmId ? `/more/srmId/${srmId}` : ''}`,
-    },
-    ibu: {
-      title: 'Bitterness (In IBU)',
-      value: ibu,
-      display: ibu || '--',
-      displayClass: 'highlight',
-      similarLinkMsg: `${ibu ? 'Beers with Similar Bitterness' : ''}`,
-      searchUrl: `${ibuLimits ? `/more/ibu/${ibuLimits[0]},${ibuLimits[1]}` : ''}`
-    }
-  };
-}
 
 const focusOnSearchInput = () => {
   const inputEl = document.getElementById('search-input');
@@ -54,63 +19,107 @@ const focusOnSearchInput = () => {
   }
 }
 
+const highlights = [
+  {
+    name: 'summer',
+    sign: '../static/neon/title-summer.png',
+    desc: 'Beers perfect for the Season.',
+    data: HIGHLIGHTS.summer
+  }, {
+    name: 'casual',
+    sign: '../static/neon/title-casual.png',
+    desc: 'Beers with Low Alcohol Content.',
+    data: HIGHLIGHTS.casual
+  }, {
+    name: 'new',
+    sign: '../static/neon/title-new.png',
+    desc: 'New Beers launched in the recent years.',
+    data: HIGHLIGHTS.new
+  }, {
+    name: 'organic',
+    sign: '../static/neon/title-organic.png',
+    desc: 'Organic Beers. Made Naturally.',
+    data: HIGHLIGHTS.organic
+  }
+];
+
 const Index = (props) => {
-  const [currentBeer, setCurrentBeer] = useState({ ...BUDWEISER });
+  // const [currentBeer, setCurrentBeer] = useState({ ...BUDWEISER });
+  const [currentBeer, setCurrentBeer] = useState({});
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [searchUrl, setSearchUrl] = useState('');
-  const { nameDisplay, description, styleId, style } = currentBeer;
-  const beerInfo = getBeerInfo(currentBeer);
+  const [searchHeadline, setSearchHeadline] = useState('');
+  const isCurrentBeerSet = (Object.keys(currentBeer).length > 0);
 
-  const openSidebar = (url = '') => {
+  const openSidebar = (url = '', headline = '') => {
     setSearchUrl(url);
+    setSearchHeadline(headline);
     setSidebarOpen(true);
   }
 
-  const onResultSelect = (beerObj) => {
+  const selectBeer = (beerObj) => {
     setSidebarOpen(false);
     setCurrentBeer({ ... beerObj });
   }
 
-  // console.log('Data: ', props, BUDWEISER);
+  const renderHighlights = () => {
+    return (
+      <div className="highlights">
+        <div className="highlights-intro">
+          Welcome to BeerOne. Search and Explore beers from around the world.
+          Get all the important details about any beer. And discover new beers
+          based on your taste.
+        </div>
+        {highlights.map((highlight, index) => (
+          <div
+            key={`highlight-${index}`}
+            className="highlight"
+            style={{animationDuration: `${index * 150}ms`}}
+          >
+            <div className="highlight-neon-sign">
+              <img src={highlight.sign} alt={`${highlight.name} Beers`} />
+            </div>
+            <div className="highlight-desc">{highlight.desc}</div>
+            <div className="highlight-beers">
+              {highlight.data.map((highlightBeer, index) => (
+                <Highlight
+                  key={`highlightBeer-${index}`}
+                  beer={highlightBeer}
+                  onClick={() => selectBeer(highlightBeer)}
+                />
+              ))}
+            </div>
+          </div>
+        ))}
+        <div className="beerone-coded">
+          <a href="https://kedar.dev" target="_blank">Made by Kedar.</a>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="beerone-container">
       <header className="beerone-header">
-        <a href="/" className="beerone-logo">
+        <div onClick={() => setCurrentBeer({})} className="beerone-logo">
           <img src="../static/beerone.png" />
-        </a>
-        <div className="beerone-search" onClick={() => openSidebar()}>
+        </div>
+        <div
+          className="beerone-search-icon"
+          onClick={() => openSidebar()}
+        >
           <SearchIcon />
         </div>
       </header>
-      <div className="beerone-glass" />
       <div className="beerone-content">
-        <div className="beer-title">{ nameDisplay }</div>
-        <div className="beer-title-sly">{ nameDisplay }</div>
-        {description &&
-          <div className="beer-desc">{description}</div>
+        {isCurrentBeerSet &&
+          <Beer
+            key={currentBeer.name}
+            currentBeer={currentBeer}
+            openSidebar={openSidebar}
+          />
         }
-        {(styleId && style) &&
-          <div className="beer-style">
-            <Info title="Style" display={style.name} />
-            <div className="beer-style-btns">
-              <Button text="About this Style" icon="info" />
-              <Button text="Beers of this Style" icon="more" />
-            </div>
-          </div>
-        }
-        <div className="beer-info">
-          {Object.keys(beerInfo).map((key, index) => {
-            const infoObj = beerInfo[key];
-
-            return (
-              <Info
-                type={key}
-                openSidebar={openSidebar}
-                { ...infoObj }
-              />
-            );
-          })}
-        </div>
+        {!isCurrentBeerSet && renderHighlights()}
       </div>
       <Modal
         open={sidebarOpen}
@@ -123,10 +132,10 @@ const Index = (props) => {
         }}>
         <Search
           searchUrl={searchUrl}
-          onResultSelect={onResultSelect}
+          searchHeadline={searchHeadline}
+          selectBeer={selectBeer}
         />
-     </Modal>
-
+      </Modal>
     </div>
   )};
 

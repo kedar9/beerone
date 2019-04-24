@@ -34,6 +34,12 @@ app
       // res.status(404).send('404: Page not Found');
     })
 
+    /* Method to get related beers.
+      Sample API formats:
+      http://api.brewerydb.com/v2/beers?abv=4,6&key=***
+      http://api.brewerydb.com/v2/beers?srmId=7&key=***
+      http://api.brewerydb.com/v2/beers?ibu=35,45&key=***
+    */
     server.get('/more/:key/:values', async (req, res) => {
       const { key, values } = req.params;
       if (key && values) {

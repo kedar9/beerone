@@ -17,7 +17,9 @@ const Button = (props) => {
   return (
     <div className="beer-button" onClick={onClick}>
       {renderIcon()}
-      <div className="beer-button-title">{props.text}</div>
+      <div className="beer-button-title">
+        {props.text}
+      </div>
     </div>
   );
 };
