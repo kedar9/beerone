@@ -74,7 +74,7 @@ const Beer = (props) => {
               text="Beers of this Style"
               icon="more"
               onClick={() => props.openSidebar(
-                `/more/styleId/${styleId}`, `Beers of Style: ${style.name}`
+                `/more/styleId/${styleId}`
               )}
             />
           </div>

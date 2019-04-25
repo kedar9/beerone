@@ -27,7 +27,7 @@ const Info = (props) => {
         <Button
           text={similarLinkMsg}
           icon="more"
-          onClick={() => props.openSidebar(searchUrl, similarLinkMsg)}
+          onClick={() => props.openSidebar(searchUrl)}
         />
       }
     </div>
