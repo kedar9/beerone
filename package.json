@@ -18,7 +18,8 @@
   },
   "scripts": {
     "dev": "node server.js",
-    "build": "next build",
+    "build": "NODE_ENV=production node server.js",
+    "devbuild": "next build",
     "start": "NODE_ENV=production node server.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
