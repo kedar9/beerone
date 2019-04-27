@@ -14,12 +14,12 @@
     "react-responsive-modal": "^3.6.0"
   },
   "devDependencies": {
-    "react-scripts": "2.1.8",
-    "webpack": "^4.28.0"
+    "react-scripts": "2.1.8"
   },
   "scripts": {
     "dev": "node server.js -p $PORT",
     "build": "next build",
+    "prestart": "next build",
     "start": "NODE_ENV=production node server.js -p $PORT",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
