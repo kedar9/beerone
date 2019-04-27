@@ -14,7 +14,8 @@
     "react-responsive-modal": "^3.6.0"
   },
   "devDependencies": {
-    "react-scripts": "2.1.8"
+    "react-scripts": "2.1.8",
+    "webpack": "^4.28.0"
   },
   "scripts": {
     "dev": "node server.js -p $PORT",
