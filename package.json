@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@zeit/next-sass": "^1.0.1",
+    "css-loader": "^2.1.1",
     "express": "^4.16.4",
     "isomorphic-unfetch": "^3.0.0",
     "next": "^8.0.3",
@@ -11,7 +12,9 @@
     "react": "^16.8.6",
     "react-device-detect": "^1.6.2",
     "react-dom": "^16.8.6",
-    "react-responsive-modal": "^3.6.0"
+    "react-responsive-modal": "^3.6.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1"
   },
   "devDependencies": {
     "react-scripts": "2.1.8"

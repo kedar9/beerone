@@ -4,18 +4,25 @@
 // console.log('process.env.NODE_ENV: ', process.env.NODE_ENV);
 // module.exports = process.env.NODE_ENV !== 'production' ?
 //   withSass() : {};
-//
-// module.exports = () => {
-//   if (process.env.NODE_ENV !== 'production') {
-//     // Skip development logic on production
-//     return {};
+
+// const withSass = require('@zeit/next-sass')
+// console.log('process.env.NODE_ENV: ', process.env.NODE_ENV);
+// module.exports = withSass();
+
+// const withSass = require('@zeit/next-sass')
+// module.exports = withSass({
+//   webpack(config, options) {
+//     return config
 //   }
-//
-//   // Development logic
-//   return withSass();
-// }
+// })
 
+module.exports = {
+  webpack: function(config, options) {
+    config.module.rules.push({
+      test: /\.s?css$/,
+      use: ['css-loader', 'sass-loader']
+    });
 
-const withSass = require('@zeit/next-sass')
-console.log('process.env.NODE_ENV: ', process.env.NODE_ENV);
-module.exports = withSass();
+    return config;
+  }
+};
