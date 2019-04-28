@@ -16,13 +16,21 @@
 //   }
 // })
 
-module.exports = {
-  webpack: function(config, options) {
-    config.module.rules.push({
-      test: /\.s?css$/,
-      use: ['css-loader', 'sass-loader']
-    });
+// module.exports = {
+//   webpack: function(config, options) {
+//     config.module.rules.push({
+//       test: /\.s?css$/,
+//       exclude: /node_modules/,
+//       use: ['style-loader', 'css-loader', 'sass-loader']
+//     });
+//
+//     return config;
+//   }
+// };
 
+const withSass = require('@zeit/next-sass');
+module.exports = withSass({
+  webpack: function(config, options) {
     return config;
   }
-};
+});
