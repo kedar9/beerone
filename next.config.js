@@ -18,6 +18,7 @@
 
 // module.exports = {
 //   webpack: function(config, options) {
+//     config.resolve.extensions = ['.js', '.scss', '.jsx'];
 //     config.module.rules.push({
 //       test: /\.s?css$/,
 //       exclude: /node_modules/,
