@@ -30,8 +30,14 @@
 // };
 
 const withSass = require('@zeit/next-sass');
-module.exports = withSass({
-  webpack: function(config, options) {
-    return config;
+module.exports = () => {
+  if (process.env.NODE_ENV === 'production') {
+    return {}
   }
-});
+
+  return withSass({
+    webpack: function(config, options) {
+      return config;
+    }
+  });
+}
