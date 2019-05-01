@@ -1,3 +1,4 @@
+import React from 'react';
 import './styles.scss';
 import InfoIcon from './../info-icon';
 import MoreIcon from './../more-icon';

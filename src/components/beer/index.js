@@ -1,3 +1,5 @@
+import React from 'react';
+
 import './styles.scss';
 import Info from './../info';
 import Button from './../button';

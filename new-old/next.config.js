@@ -18,7 +18,7 @@
 
 // module.exports = {
 //   webpack: function(config, options) {
-//     config.resolve.extensions = ['.js', '.scss', '.jsx'];
+//     config.resolve.extensions = ['.js', '.jsx', '.scss'];
 //     config.module.rules.push({
 //       test: /\.s?css$/,
 //       exclude: /node_modules/,
@@ -32,12 +32,8 @@
 const withSass = require('@zeit/next-sass');
 module.exports = () => {
   if (process.env.NODE_ENV === 'production') {
-    return {}
+    return {};
   }
 
-  return withSass({
-    webpack: function(config, options) {
-      return config;
-    }
-  });
+  return withSass();
 }

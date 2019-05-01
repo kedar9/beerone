@@ -1,3 +1,5 @@
+import React from 'react';
+
 import './styles.scss';
 import Button from './../button';
 import Search from './../search';
