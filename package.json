@@ -22,11 +22,6 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  "proxy": {
-    "/more/*": {
-      "target": "http://localhost:8000/"
-    }
-  },
   "browserslist": {
     "production": [
       ">0.2%",
