@@ -15,6 +15,30 @@ const mockData = require('./src/static/mock.js');
 const server = express();
 server.use(express.json());
 
+const mapBeerData = (beerObj) => {
+  const { srm, labels, style } = beerObj;
+
+  return {
+    name: beerObj.nameDisplay || beerObj.name || '',
+    description: beerObj.description,
+    abv: beerObj.abv,
+    ibu: beeObj.ibu,
+    srm: srm && {
+      id: srm.id,
+      hex: srm.hex
+    }
+    label: labels && labels.contentAwareMedium,
+    availableId: beerObj.availableId,
+    isOrganic: beerObj.isOrganic,
+    style: style && {
+      id: style.id,
+      name: style.name || style.shortName || '',
+      description: style.description
+    },
+    isRetired: beerObj.isRetired
+  }
+}
+
 server.get('/search', async (req, res) => {
   const { q } = req.query;
   if (q) {

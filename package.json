@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "express": "^4.16.4",
+    "http-proxy-middleware": "^0.19.1",
     "isomorphic-unfetch": "^3.0.0",
     "node-sass": "^4.12.0",
     "react": "^16.8.6",
@@ -11,17 +12,20 @@
     "react-responsive-modal": "^3.6.0",
     "react-scripts": "3.0.0"
   },
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "http://localhost:8000",
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "proxy": {
+    "/more/*": {
+      "target": "http://localhost:8000/"
+    }
   },
   "browserslist": {
     "production": [
