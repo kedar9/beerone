@@ -1,0 +1,48 @@
+.beerone-search {
+  &-headline {
+    width: 90%;
+    color: #d7d7d7;
+    font-size: 18px;
+    background-color: rgba(#181818, 0.9);
+    padding: 5px 10px;
+    margin-top: -5px;
+    border-radius: 5px;
+  }
+  &-form {
+    margin-top: 15px;
+    font-size: 20px;
+    color: #000;
+    font-weight: 700;
+  }
+
+  &-input {
+    height: 15px;
+    width: 95%;
+    font-family: NationalPark, sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+    padding: 10px;
+    margin: 5px 0;
+    background-color: rgba(#fff, 0.1);
+    border: 2px solid #181818;
+    border-radius: 5px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &-list {
+    list-style: none;
+    padding-left: 10px;
+  }
+
+  &-result {
+    width: fit-content;
+    font-family: Staatliches, sans-serif;
+    font-size: 25px;
+    color: #181818;
+    margin: 5px 0;
+    cursor: pointer;
+  }
+}

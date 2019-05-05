@@ -2,6 +2,8 @@ import { useState } from 'react';
 import fetch from 'isomorphic-unfetch';
 import Modal from 'react-responsive-modal';
 
+// import './styles.scss';
+import { STYLES } from '../static/styles.js';
 import Beer from '../components/beer';
 import Highlight from '../components/highlight';
 import Info from '../components/info';
@@ -10,10 +12,6 @@ import Search from '../components/search';
 import SearchIcon from '../components/search-icon';
 import { HIGHLIGHTS } from '../static/data.js';
 import { BUDWEISER } from '../static/mock.js';
-
-if (process.env.NODE_ENV !== 'production') {
-  require('./styles.scss');
-}
 
 const focusOnSearchInput = () => {
   const inputEl = document.getElementById('search-input');
@@ -139,6 +137,11 @@ const Index = (props) => {
           selectBeer={selectBeer}
         />
       </Modal>
+      <style jsx>{`
+        body {
+          background-color: black;
+        }
+      `}</style>
     </div>
   )};
 

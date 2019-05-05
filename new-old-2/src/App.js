@@ -1,19 +1,17 @@
+import React from 'react';
 import { useState } from 'react';
-import fetch from 'isomorphic-unfetch';
 import Modal from 'react-responsive-modal';
 
-import Beer from '../components/beer';
-import Highlight from '../components/highlight';
-import Info from '../components/info';
-import Button from '../components/button';
-import Search from '../components/search';
-import SearchIcon from '../components/search-icon';
-import { HIGHLIGHTS } from '../static/data.js';
-import { BUDWEISER } from '../static/mock.js';
-
-if (process.env.NODE_ENV !== 'production') {
-  require('./styles.scss');
-}
+import './App.scss';
+import ASSETS from './static/';
+import Beer from './components/beer';
+import Highlight from './components/highlight';
+import Info from './components/info';
+import Button from './components/button';
+import Search from './components/search';
+import SearchIcon from './components/search-icon';
+import { HIGHLIGHTS } from './static/data.js';
+import { BUDWEISER } from './static/mock.js';
 
 const focusOnSearchInput = () => {
   const inputEl = document.getElementById('search-input');
@@ -25,28 +23,28 @@ const focusOnSearchInput = () => {
 const highlights = [
   {
     name: 'summer',
-    sign: '../static/neon/title-summer.png',
+    sign: ASSETS.NEON_SUMMER,
     desc: 'Beers perfect for the Season.',
     data: HIGHLIGHTS.summer
   }, {
     name: 'casual',
-    sign: '../static/neon/title-casual.png',
+    sign: ASSETS.NEON_CASUAL,
     desc: 'Beers with Low Alcohol Content.',
     data: HIGHLIGHTS.casual
   }, {
     name: 'new',
-    sign: '../static/neon/title-new.png',
+    sign: ASSETS.NEON_NEW,
     desc: 'New Beers launched in the recent years.',
     data: HIGHLIGHTS.new
   }, {
     name: 'organic',
-    sign: '../static/neon/title-organic.png',
+    sign: ASSETS.NEON_ORGANIC,
     desc: 'Organic Beers. Made Naturally.',
     data: HIGHLIGHTS.organic
   }
 ];
 
-const Index = (props) => {
+function App() {
   // const [currentBeer, setCurrentBeer] = useState({ ...BUDWEISER });
   const [currentBeer, setCurrentBeer] = useState({});
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -68,7 +66,7 @@ const Index = (props) => {
   const renderHighlights = () => {
     return (
       <div className="highlights">
-        <div className="highlights-intro" style={{ color: 'red' }}>
+        <div className="highlights-intro">
           Welcome to BeerOne. Search and Explore beers from around the world.
           Get all the important details about any beer. And discover new beers
           based on your taste.
@@ -105,7 +103,7 @@ const Index = (props) => {
     <div className="beerone-container">
       <header className="beerone-header">
         <div onClick={() => setCurrentBeer({})} className="beerone-logo">
-          <img src="../static/beerone.png" className="beerone-logo-img" />
+          <img src={ASSETS.BEERONE_LOGO} className="beerone-logo-img" />
         </div>
         <div
           className="beerone-search-icon"
@@ -140,15 +138,7 @@ const Index = (props) => {
         />
       </Modal>
     </div>
-  )};
+  );
+}
 
-// Index.getInitialProps = async () => {
-//   const res = await fetch('https://api.brewerydb.com/v2/search?type=beer&key=ea2b62597b2a7489427894a88c9fca06&q=bud');
-//   const data = await res.json();
-//
-//   console.log('\n\n data from getInitialProps: ', data);
-//
-//   return data;
-// }
-
-export default Index;
+export default App;
