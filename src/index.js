@@ -1,16 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import "core-js/stable";
+import "regenerator-runtime/runtime";
 
+import Home from './components/home';
 import './styles.scss';
-import LOGO from './static/react.png';
 
-const Index = () => {
-  return (
-    <div>
-      <img src={LOGO} width="30" height="30" />
-      Welcome to React!
-    </div>
-  );
-};
-
-ReactDOM.render(<Index />, document.getElementById('app'));
+ReactDOM.render(<Home />, document.getElementById('root'));

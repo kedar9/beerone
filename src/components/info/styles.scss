@@ -1,0 +1,66 @@
+.beer-info {
+  flex-wrap: wrap;
+  width: 90%;
+  position: relative;
+  animation-name: slideUp;
+  animation-duration: 250ms;
+  animation-timing-function: ease-in;
+
+  @media only screen and (min-width: 1200px) {
+    width: 93%;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+  }
+
+  &-container {
+    padding: 1%;
+
+    @media only screen and (min-width: 1200px) {
+      width: 30%;
+    }
+  }
+
+  &-title {
+    font-size: 21px;
+  }
+
+  &-display {
+    font-size: 21px;
+    height: 100px;
+    margin: 0;
+    margin-bottom: 10px;
+
+    @media only screen and (min-width: 1200px) {
+      height: 80px;
+    }
+
+
+    &.highlight {
+      font-size: 90px;
+
+      @media only screen and (min-width: 1200px) {
+        font-size: 70px;
+      }
+    }
+
+    &.subtle {
+      font-size: 21px;
+    }
+
+    &.color {
+      width: 90px;
+      height: 90px;
+      color: transparent;
+      margin: 8px 0;
+      border: 1px solid #fff;
+      border-radius: 25px;
+
+      @media only screen and (min-width: 1200px) {
+        margin: 8px auto;
+        width: 70px;
+        height: 70px;
+      }
+    }
+  }
+}

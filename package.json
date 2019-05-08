@@ -34,8 +34,12 @@
     "webpack-cli": "^3.3.2"
   },
   "dependencies": {
+    "core-js": "^3.0.1",
     "express": "^4.16.4",
+    "isomorphic-unfetch": "^3.0.0",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "react-responsive-modal": "^3.6.0",
+    "regenerator-runtime": "^0.13.2"
   }
 }
