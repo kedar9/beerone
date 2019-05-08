@@ -11,7 +11,6 @@ import SearchIcon from './../search-icon';
 import ASSETS from '../../static';
 
 import { HIGHLIGHTS } from '../../static/data.js';
-import { BUDWEISER } from '../../static/mock.js';
 import './styles.scss';
 
 const focusOnSearchInput = () => {
@@ -46,7 +45,6 @@ const highlights = [
 ];
 
 const Home = () => {
-  // const [currentBeer, setCurrentBeer] = useState({ ...BUDWEISER });
   const [currentBeer, setCurrentBeer] = useState({});
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [searchUrl, setSearchUrl] = useState('');
@@ -104,7 +102,7 @@ const Home = () => {
     <div className="beerone-container">
       <header className="beerone-header">
         <div onClick={() => setCurrentBeer({})} className="beerone-logo">
-          <img src="../static/beerone.png" className="beerone-logo-img" />
+          <img src={ASSETS.BEERONE_LOGO} className="beerone-logo-img" />
         </div>
         <div
           className="beerone-search-icon"
