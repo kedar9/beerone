@@ -1,34 +1,3 @@
-@keyframes slideUp {
-  from {
-    bottom: -50px;
-    opacity: 0;
-  }
-  to {
-    bottom: 0px;
-    opacity: 1;
-  }
-}
-
-@keyframes slideUpFar {
-  from {
-    bottom: -150px;
-    opacity: 0;
-  }
-  to {
-    bottom: 0px;
-    opacity: 1;
-  }
-}
-
-@keyframes slideIn {
-  from {
-    right: -1500px;
-  }
-  to {
-    right: 0px;
-  }
-}
-
 .beerone {
   &-container {
     margin: 0px;

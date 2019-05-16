@@ -3,7 +3,7 @@ import './styles.scss';
 
 const Highlight = ({ beer, onClick }) => {
   console.log('beer: ', beer);
-  const labelPath = beer.labels ? beer.labels.contentAwareMedium : '';
+  const labelPath = beer.label || '';
   const backgroundStyle = {
     backgroundImage: `radial-gradient(at top left, #eabb00 30%, rgba(234, 187, 0, 0.5) 120%), url(${labelPath})`
   };

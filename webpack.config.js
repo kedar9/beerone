@@ -11,7 +11,7 @@ module.exports = {
   entry: "./src/index.js",
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: '[hash].js'
+    filename: '[name].js'
   },
   plugins: [htmlPlugin],
   module: {
@@ -30,7 +30,7 @@ module.exports = {
       {
         test: /\.(png|svg|jpg|gif|webp)$/,
         loader: "file-loader",
-        options: { name: '/static/[hash].[ext]' }
+        options: { name: '/static/[hash]' }
       },
       {
         test: /\.(otf|ttf)$/,

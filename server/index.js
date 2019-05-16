@@ -13,9 +13,32 @@ const sortBy = 'order=updateDate&sort=DESC';
 
 const mockData = require('./mock.js');
 
-const mockResponse = {
-  foo: 'bar',
-  bar: 'foo'
+const mapResponse = (response) => {
+  if (!response.data || !response.data.length) return response;
+
+  const mappedResponse = {
+    ...response,
+    data: response.data.map(item => ({
+      name: item.nameDisplay || item.name || '',
+      description: item.description || '',
+      abv: item.abv,
+      ibu: item.ibu,
+      srm: {
+        id: item.srm && item.srm.id,
+        hex: item.srm && item.srm.hex,
+      },
+      isOrganic: item.isOrganic,
+      isRetired: item.isRetired,
+      label: item.labels && (item.labels.contentAwareMedium || item.labels.medium),
+      style: {
+        id: item.style && item.style.id,
+        name: item.style && item.style.name,
+        description: item.style && item.style.description
+      }
+    }))
+  };
+
+  return mappedResponse;
 };
 
 app.use(express.static(DIST_DIR));
@@ -52,10 +75,11 @@ app.get('/more/:key/:values', async (req, res) => {
   const { key, values } = req.params;
   if (key && values) {
     try {
-      console.log('\n\n calling: ', `${baseUrl}/beers/?${key}=${values}&${apiKey}&${sortBy}`);
+      console.log(`${baseUrl}/beers/?${key}=${values}&${apiKey}&${sortBy}`);
       const response = await fetch(`${baseUrl}/beers/?${key}=${values}&${apiKey}&${sortBy}`);
-      const responseObj = await response.json();
-      res.send(responseObj);
+      let responseObj = await response.json();
+      console.log('mapResponse(responseObj): ', responseObj);
+      res.send(mapResponse(responseObj));
     } catch (e) {
       res.status(500).send('500: Internal Server Error');
     }

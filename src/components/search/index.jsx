@@ -22,7 +22,6 @@ const Search = (props) => {
       const response = await res.json();
       setIsLoading(false);
 
-      console.log('\n\n\n response is: ', response);
       if (response.status === 'success' && response.data) {
         setBeerList(response.data);
       } else {
@@ -51,6 +50,7 @@ const Search = (props) => {
 
   return (
     <div className="beerone-search">
+      {isLoading && <div class="loader" />}
       {searchHeadline &&
         <div className="beerone-search-headline">{searchHeadline}</div>
       }

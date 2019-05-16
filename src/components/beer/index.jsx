@@ -6,7 +6,7 @@ import Button from './../button';
 
 const getBeerInfo = (currentBeer) => {
   const {
-    styleId, style, abv, srmId, srm, ibu, description
+    style, abv, srm = {}, ibu, description
   } = currentBeer;
 
   // 'parseInt' is required in the following assignments because
@@ -25,11 +25,11 @@ const getBeerInfo = (currentBeer) => {
     },
     srmId: {
       title: 'Beer Color',
-      value: srmId,
-      display: (srm && srm.hex) || '--',
-      displayClass: `${(srm && srm.hex) ? 'color' : 'highlight'}`,
-      similarLinkMsg: `${srmId ? 'Beers of This Color' : ''}`,
-      searchUrl: `${srmId ? `/more/srmId/${srmId}` : ''}`,
+      value: srm.id,
+      display: srm.hex || '--',
+      displayClass: `${srm.hex ? 'color' : 'highlight'}`,
+      similarLinkMsg: `${srm.id ? 'Beers of This Color' : ''}`,
+      searchUrl: `${srm.id ? `/more/srmId/${srm.id}` : ''}`,
     },
     ibu: {
       title: 'Bitterness (In IBU)',
@@ -44,26 +44,25 @@ const getBeerInfo = (currentBeer) => {
 
 const Beer = (props) => {
   const {
-    nameDisplay,
+    name,
     description,
-    styleId,
     style,
-    labels = {}
+    label
   } = props.currentBeer;
   const beerInfo = getBeerInfo(props.currentBeer);
 
   return (
     <div className="beer">
       <div className="beer-intro">
-        {labels.contentAwareMedium &&
-          <img src={labels.contentAwareMedium} className="beer-logo" />
+        {label &&
+          <img src={label} className="beer-logo" />
         }
-        <div className="beer-title">{ nameDisplay }</div>
+        <div className="beer-title">{ name }</div>
       </div>
       {description &&
-        <div className="beer-desc">{description}</div>
+        <div className="beer-desc">{ description }</div>
       }
-      {(styleId && style) &&
+      {style.name &&
         <div className="beer-style">
           <Info title="Style" display={style.name} />
           <div className="beer-style-btns">
@@ -76,7 +75,7 @@ const Beer = (props) => {
               text="Beers of this Style"
               icon="more"
               onClick={() => props.openSidebar(
-                `/more/styleId/${styleId}`
+                `/more/styleId/${style.id}`
               )}
             />
           </div>
