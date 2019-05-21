@@ -23,10 +23,12 @@
   }
 
   &-title {
+    max-height: 50px;
     font-family: Staatliches, sans-serif;
     font-size: 22.5px;
     text-align: right;
     margin-left: 65px;
+    overflow-y: hidden;
   }
 
   &-label {
@@ -50,12 +52,13 @@
   }
 
   &-desc {
+    max-height: 50px;
     font-size: 18px;
-    font-weight: 700;
     text-align: left;
     margin-top: 10px;
     position: absolute;
     bottom: 5px;
+    overflow-y: hidden;
   }
 
   &-num {

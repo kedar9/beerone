@@ -50,7 +50,6 @@ const Search = (props) => {
 
   return (
     <div className="beerone-search">
-      {isLoading && <div class="loader" />}
       {searchHeadline &&
         <div className="beerone-search-headline">{searchHeadline}</div>
       }
@@ -62,6 +61,7 @@ const Search = (props) => {
           onChange={handleOnChange}
         />
       </div>}
+      {isLoading && <div class="loader" />}
       <ul className="beerone-search-list">
         {beerList.map(beer => (
           <li className="beerone-search-result" onClick={() => props.selectBeer(beer)}>

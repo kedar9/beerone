@@ -34,6 +34,10 @@ const mapResponse = (response) => {
         id: item.style && item.style.id,
         name: item.style && item.style.name,
         description: item.style && item.style.description
+      },
+      availability: {
+        id: item.available && item.available.id,
+        name: item.available && item.available.name
       }
     }))
   };
@@ -54,9 +58,9 @@ app.get('/search', async (req, res) => {
   const { q } = req.query;
   if (q) {
     try {
-      const response = await fetch(`https://jsonplaceholder.typicode.com/todos/1`);
+      const response = await fetch(`${baseUrl}/search/?type=beer&q=${q}&${apiKey}`);
       const responseObj = await response.json();
-      res.send(mockData.SEARCH_RESULTS);
+      res.send(responseObj);
     } catch (e) {
       res.status(500).send('500: Internal Server Error');
     }
