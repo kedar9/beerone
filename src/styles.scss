@@ -16,13 +16,17 @@ body {
   background-color: #181818;
   background-image: url('./static/beer.webp');
   background-size: 100vh;
-  background-position: 700px 60px;
+  background-position: 300px 60px;
   background-repeat: no-repeat;
   background-attachment: fixed;
   transition: background-position 300ms ease-in-out;
 
+  @media only screen and (min-width: 720px) {
+    background-position: 600px 60px;
+  }
+
   @media only screen and (min-width: 1200px) {
-    background-position: -36% 90px;
+    background-position: -36% 120px;
   }
 }
 

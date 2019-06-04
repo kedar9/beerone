@@ -69,28 +69,47 @@ const HIGHLIGHTS = {
   ],
   winter: [
     {
-    name: '35th Anniversary  - Brewer\'s Reserve',
-    description: 'Inspired by the special ale Sierra Nevada Brewing Company brewed for their 30th anniversary, Brewers Reserve highlights pioneering history and the innovative spirit. It is a blend of their three most acclaimed ales: Oak Barrel-Aged Bigfoot, dry-hopped Celebration IPA and fresh Pale Ale.',
-    abv: '8',
+    id: 'gVuwQ6',
+    name: 'Shameless McDale',
+    description: 'In the spirit of early spring, we have made this a "green" Irish Red. Not green in the same sense as FD&C Green No. 3 food coloring, but green as in using 100% Certified Organic Barley. The result is a slightly roasted malt flavor and light hoppy bitterness that pairs well with some corned beef and cabbage or even a humble hamburger. Chase that leprechaun down and steal this pint of gold!',
+    highlightDesc: 'Irish-Style Red Ale.',
+    abv: '4.8',
+    ibu: 22,
+    srm: {
+      id: 10,
+      hex: 'DE7C00'
+    },
     isOrganic: 'N',
     isRetired: 'N',
-    labels: 'https://brewerydb-images.s3.amazonaws.com/beer/ajbd6g/upload_o0dl64-contentAwareMedium.png',
+    label: 'https://i.ibb.co/Srd6vJh/shameless-mcdale.jpg',
+    available: {
+      id: 8,
+      name: 'Winter',
+    },
     style: {
-      id: 14,
-      name: 'Strong Ale',
-      description: 'Light amber to mid-range brown in color, strong ales are medium to full bodied with a malty sweetness and may have low levels of roast malt character. Hop aroma should be minimal and flavor can vary from none to medium in character intensity. Fruity-ester flavors and aromas can contribute to the character of this ale. Bitterness should be minimal but evident and balanced with malt and/or caramel-like sweetness. Alcohol types can be varied and complex. A rich, often sweet and complex estery character may be evident. Very low levels of diacetyl are acceptable. Chill haze is acceptable at low temperatures. (This style may often be split into two categories, strong and very strong.)'
+      id: 22,
+      name: 'Irish-Style Red Ale',
+      description: 'Irish-style red ales range from light red-amber-copper to light brown in color. These ales have a medium hop bitterness and flavor. They often don\'t have hop aroma. Irish-style red ales have low to medium candy-like caramel malt sweetness and may have a balanced subtle degree of roast barley or roast malt character and complexity.  Irish-style Red Ales have a medium body. The style may have low levels of fruity-ester flavor and aroma. Diacetyl should be absent or at very low levels. Chill haze is allowable at cold temperatures. Slight yeast haze is acceptable for bottle-conditioned products.'
       }
     },
     {
     id: 'MqTIG4',
     name: '72 Imperial',
     description: 'Just sit back and enjoy the ride.\r\n\r\nBrewed with chocolate from Colorado\'s very own Rocky Mountain Chocolate Factory, Inc., this Imperial Chocolate Cream Stout is full of rich, toasted chocolate notes with hints of dark fruit. 72 Imperial will take you where you need to go. Just sit back and enjoy the ride.',
+    highlightDesc: 'Specialty Stout Beer.',
     abv: '7.2',
     ibu: '11',
-    availableId: 2,
+    srm: {
+      id: 40,
+      hex: '36080A'
+    },
+    available: {
+      id: 8,
+      name: 'Winter',
+    },
     isOrganic: 'N',
     isRetired: 'N',
-    labels: 'https://brewerydb-images.s3.amazonaws.com/beer/MqTIG4/upload_0mNn6W-contentAwareMedium.png',
+    label: 'https://i.ibb.co/G5McznB/72-imperial.png',
     style: {
       id: 44,
       name: 'Specialty Stouts',
@@ -99,30 +118,26 @@ const HIGHLIGHTS = {
       }
     },
     {
-    id: '4fKoj3',
-    name: 'Budweiser Black Crown',
-    description: 'With a blend of two-row caramel malt and four types of domestic hops, Budweiser Black Crown is finished on a bed of Beechwood chips for a smooth, balanced taste. Incorporating the proprietary yeast directly descended from the original Budweiser yeast strain used by Adolphus Busch in 1876, Budweiser Black Crown retains the key characteristics of Budweiser with its clean taste and high drinkability.',
-    abv: '6',
-    isOrganic: 'N',
-    isRetired: 'N',
-    labels: 'https://brewerydb-images.s3.amazonaws.com/beer/4fKoj3/upload_Nn1p0M-contentAwareMedium.png',
-    style: {
-      id: 101,
-      name: 'American-Style Amber Lager',
-      description: 'American-style amber lagers are light amber to amber or copper colored. They are medium bodied. There is a noticeable degree of caramel-type malt character in flavor and often in aroma. This is a broad category in which the hop bitterness, flavor, and aroma may be accentuated or may only be present at relatively low levels, yet noticeable. Fruity esters, diacetyl, and chill haze should be absent.',
-      }
+    name: 'Oatmeal Stout',
+    description: 'Embrace the season with Mayflower Oatmeal Stout. Brewed with three types of oats and several varieties of dark barley malts, this beer adds a little sweetness to the roasted flavor of traditional stouts. The result is a rich and smooth brew that will help sustain you through the short days and long nights of winter.',
+    highlightDesc: 'American-Style Imperial Dark Beer.',
+    abv: '5.4',
+    ibu: '28',
+    srm: {
+      id: 41,
+      hex: '000000'
     },
-    {
-    name: 'Boomerang',
-    description: 'Boomerang is an American IPA that slings fruit-forward and floral flavors of Australian hops for an assertive, intercontinental escapes from winter’s grasp.',
-    abv: '6.7',
+    available: {
+      id: 8,
+      name: 'Winter',
+    },
     isOrganic: 'N',
     isRetired: 'N',
-    labels: 'https://brewerydb-images.s3.amazonaws.com/beer/AEFy0R/upload_jNQBNH-medium.png',
+    label: 'https://i.ibb.co/VY8GZ0G/oatmeal-stout.jpg',
     style: {
-      id: 30,
-      name: 'American-Style India Pale Ale',
-      description: 'American-style India pale ales are perceived to have medium-high to intense hop bitterness, flavor and aroma with medium-high alcohol content. The style is further characterized by floral, fruity, citrus-like, piney, resinous, or sulfur-like American-variety hop character. Note that one or more of these American-variety hop characters is the perceived end, but the hop characters may be a result of the skillful use of hops of other national origins. The use of water with high mineral content results in a crisp, dry beer. This pale gold to deep copper-colored ale has a full, flowery hop aroma and may have a strong hop flavor (in addition to the perception of hop bitterness). India pale ales possess medium maltiness which contributes to a medium body. Fruity-ester flavors and aromas are moderate to very strong. Diacetyl can be absent or may be perceived at very low levels. Chill and/or hop haze is allowable at cold temperatures. (English and citrus-like American hops are considered enough of a distinction justifying separate American-style IPA and English-style IPA categories or subcategories. Hops of other origins may be used for bitterness or approximating traditional American or English character. See English-style India Pale Ale',
+      id: 43,
+      name: 'American-Style Imperial Stout',
+      description: 'Black in color, American-style imperial stouts typically have a high alcohol content. Generally characterized as very robust. The extremely rich malty flavor and aroma are balanced with assertive hopping and fruity-ester characteristics. Bitterness should be moderately high to very high and balanced with full sweet malt character. Roasted malt astringency and bitterness can be moderately perceived but should not overwhelm the overall character. Hop aroma is usually moderately-high to overwhelmingly hop-floral, -citrus or -herbal. Diacetyl (butterscotch) levels should be absent.',
       }
     }
   ],
@@ -233,7 +248,7 @@ const HIGHLIGHTS = {
     {
     id: 'Dvucvo',
     name: 'Bud Light Blends Lemon',
-    nameDisplay: 'Bud Light Blends Lemon',
+    description: 'Introducing Bud Light Blends Lemon: A unique twist on America’s favorite light lager. It’s brewed on real lemon peels and then aged on real tea leaves for a refreshing lemon tea taste in every sip.',
     abv: '3.5',
     highlightDesc: 'Alcohol Content',
     highlightNum: '3.5%',

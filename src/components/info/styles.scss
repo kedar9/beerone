@@ -14,10 +14,9 @@
   }
 
   &-container {
-    padding: 1%;
-
     @media only screen and (min-width: 1200px) {
       width: 30%;
+      padding: 1%;
     }
   }
 
@@ -27,7 +26,6 @@
 
   &-display {
     font-size: 21px;
-    height: 100px;
     margin: 0;
     margin-bottom: 10px;
 
@@ -37,7 +35,7 @@
 
 
     &.highlight {
-      font-size: 90px;
+      font-size: 60px;
 
       @media only screen and (min-width: 1200px) {
         font-size: 70px;
@@ -49,8 +47,8 @@
     }
 
     &.color {
-      width: 90px;
-      height: 90px;
+      width: 70px;
+      height: 70px;
       color: transparent;
       margin: 8px 0;
       border: 1px solid #fff;
@@ -58,8 +56,6 @@
 
       @media only screen and (min-width: 1200px) {
         margin: 8px auto;
-        width: 70px;
-        height: 70px;
       }
     }
   }

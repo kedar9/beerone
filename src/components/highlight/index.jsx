@@ -2,7 +2,6 @@ import React from 'react';
 import './styles.scss';
 
 const Highlight = ({ beer, onClick }) => {
-  console.log('beer: ', beer);
   const labelPath = beer.label || '';
   const backgroundStyle = {
     backgroundImage: `radial-gradient(at top left, #eabb00 30%, rgba(234, 187, 0, 0.5) 120%), url(${labelPath})`
@@ -15,7 +14,7 @@ const Highlight = ({ beer, onClick }) => {
       >
       </div>
       <div className="highlight-beer-title">
-        {beer.nameDisplay || beer.name}
+        {beer.name}
       </div>
       {beer.highlightNum &&
         <div className="highlight-beer-num">

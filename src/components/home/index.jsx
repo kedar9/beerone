@@ -19,13 +19,16 @@ const focusOnSearchInput = () => {
     inputEl.focus();
   }
 }
+const date = new Date();
+const month = date.getMonth();
+const isSummer = (month > 2 && month < 9);
 
 const highlights = [
   {
-    name: 'summer',
-    sign: ASSETS.NEON_SUMMER,
+    name: isSummer ? 'summer' : 'winter',
+    sign: isSummer ? ASSETS.NEON_SUMMER : ASSETS.NEON_WINTER,
     desc: 'Beers perfect for the Season.',
-    data: HIGHLIGHTS.summer
+    data: isSummer ? HIGHLIGHTS.summer : HIGHLIGHTS.winter
   }, {
     name: 'casual',
     sign: ASSETS.NEON_CASUAL,
@@ -65,11 +68,6 @@ const Home = () => {
   const renderHighlights = () => {
     return (
       <div className="highlights">
-        <div className="highlights-intro" style={{ color: 'red' }}>
-          Welcome to BeerOne. Search and Explore beers from around the world.
-          Get all the important details about any beer. And discover new beers
-          based on your taste.
-        </div>
         {highlights.map((highlight, index) => (
           <div
             key={`highlight-${index}`}
@@ -92,6 +90,7 @@ const Home = () => {
           </div>
         ))}
         <div className="beerone-coded">
+          <img src={ASSETS.NEON_CODED} className="beerone-coded-logo" />
           <a href="https://kedar.dev" target="_blank">Made by Kedar.</a>
         </div>
       </div>
@@ -103,6 +102,7 @@ const Home = () => {
       <header className="beerone-header">
         <div onClick={() => setCurrentBeer({})} className="beerone-logo">
           <img src={ASSETS.BEERONE_LOGO} className="beerone-logo-img" />
+          <div className="beerone-logo-tag">Explore & Discover Beers</div>
         </div>
         <div
           className="beerone-search-icon"

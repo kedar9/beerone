@@ -79,10 +79,8 @@ app.get('/more/:key/:values', async (req, res) => {
   const { key, values } = req.params;
   if (key && values) {
     try {
-      console.log(`${baseUrl}/beers/?${key}=${values}&${apiKey}&${sortBy}`);
       const response = await fetch(`${baseUrl}/beers/?${key}=${values}&${apiKey}&${sortBy}`);
       let responseObj = await response.json();
-      console.log('mapResponse(responseObj): ', responseObj);
       res.send(mapResponse(responseObj));
     } catch (e) {
       res.status(500).send('500: Internal Server Error');

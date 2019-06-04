@@ -1,51 +1,46 @@
 .beer-button {
-  width: 75%;
-  height: 30px;
+  width: 250px;
+  height: 36px;
   color: #eabb00;
   margin: 10px 0;
+  padding: 0;
+  display: flex;
+  background-color: #000;
+  border: 0.5px solid #eabb00;
+  border-radius: 2px;
   cursor: pointer;
-  display: inline;
 
   @media only screen and (min-width: 1200px) {
-    width: 250px;
-    height: 36px;
     margin: 10px auto;
-    padding: 0;
-    display: flex;
-    background-color: #000;
-    border: 0.5px solid #eabb00;
-    border-radius: 2px;
   }
 
   .icon {
-    height: 30px;
+    width: 25px;
+    height: 36px;
     padding: 0px 5px;
     background-color: #eabb00;
     border-top-left-radius: 1px;
     border-bottom-left-radius: 1px;
     stroke: #181818;
-    display: none;
 
-    @media only screen and (min-width: 1200px) {
-      width: 25px;
-      height: 36px;
-      display: block;
-    }
+    // @media only screen and (min-width: 1200px) {
+    //   width: 25px;
+    //   height: 36px;
+    //   display: block;
+    // }
   }
 
   &-title {
-    padding: 10px;
+    padding: 6px;
     color: #fff;
     font-family: Staatliches, sans-serif;
     font-size: 20px;
     text-align: left;
-    border: 1px solid #eabb00;
     border-radius: 2px;
 
     @media only screen and (min-width: 1200px) {
-      padding: 5px;
-      font-size: 20px;
-      border: none;
+      // padding: 5px;
+      // font-size: 20px;
     }
 
     &:hover {

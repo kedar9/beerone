@@ -15,6 +15,10 @@ const Search = (props) => {
   const [isLoading, setIsLoading] = useState(false);
   const { searchUrl, searchHeadline } = props;
 
+  useEffect(() => {
+    if (searchUrl) search(searchUrl);
+  }, []);
+
   const search = async (url) => {
     setIsLoading(true);
     const res = await fetch(url);
@@ -44,10 +48,6 @@ const Search = (props) => {
     }
   };
 
-  useEffect(() => {
-    if (searchUrl) search(searchUrl);
-  }, []);
-
   return (
     <div className="beerone-search">
       {searchHeadline &&
@@ -61,11 +61,15 @@ const Search = (props) => {
           onChange={handleOnChange}
         />
       </div>}
-      {isLoading && <div class="loader" />}
+      {isLoading && <div className="loader" />}
       <ul className="beerone-search-list">
         {beerList.map(beer => (
-          <li className="beerone-search-result" onClick={() => props.selectBeer(beer)}>
-            {beer.nameDisplay || beer.name}
+          <li
+            key={beer.name}
+            className="beerone-search-result"
+            onClick={() => props.selectBeer(beer)}
+          >
+            {beer.name}
           </li>
         ))}
       </ul>
